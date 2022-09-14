@@ -7,8 +7,6 @@ interface Props {
 }
 
 const Phonetics: React.FC<Props> = ({ data }) => {
-  const sound_waves = require("../images/sound_waves.svg");
-
   return (
     <>
       {data.map(

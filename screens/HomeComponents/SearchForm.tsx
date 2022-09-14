@@ -8,16 +8,13 @@ import {
   GestureResponderEvent,
 } from "react-native";
 
-type Props = {
-  onPress: (event: GestureResponderEvent) => void;
-};
-export const SearchForm = (props: {
-  handleSubmit: (arg0: String) => void | Promise<any>;
-}) => (
+export const SearchForm = (props: { handleSubmit: (arg0: string) => void }) => (
   <Formik
     initialValues={{ keyword: "" }}
     onSubmit={(values, { resetForm }) => {
-      props.handleSubmit(values.keyword);
+      values.keyword !== "" && /^[a-zA-Z-\s]*$/.test(values.keyword)
+        ? props.handleSubmit(values.keyword)
+        : alert("Only latin letters, dash and space are allowed");
       resetForm();
     }}
   >

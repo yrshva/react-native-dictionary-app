@@ -1,9 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import Dictionary from "./Dictionary";
-import { SearchForm } from "./SearchForm";
+import { ScrollView, Text, StyleSheet } from "react-native";
+import Dictionary from "./HomeComponents/Dictionary";
+import { SearchForm } from "./HomeComponents/SearchForm";
 
 export const Home = () => {
   const [keyword, setKeyword] = useState<String | null>(null);
