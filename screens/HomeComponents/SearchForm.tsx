@@ -3,10 +3,10 @@ import { Formik } from "formik";
 import {
   View,
   TextInput,
-  Button,
   StyleSheet,
   GestureResponderEvent,
 } from "react-native";
+import { FlatButton } from "../../shared/FlatButton";
 
 export const SearchForm = (props: { handleSubmit: (arg0: string) => void }) => (
   <Formik
@@ -19,16 +19,16 @@ export const SearchForm = (props: { handleSubmit: (arg0: string) => void }) => (
     }}
   >
     {({ handleChange, handleBlur, handleSubmit, values }) => (
-      <View>
+      <View style={styles.form}>
         <TextInput
           placeholder="Start typing.."
           onChangeText={handleChange("keyword")}
           onBlur={handleBlur("keyword")}
           value={values.keyword}
+          style={styles.input}
         />
-        <Button
-          title="Submit"
-          color="black"
+        <FlatButton
+          text="Submit"
           onPress={
             handleSubmit as unknown as (event: GestureResponderEvent) => void
           }
@@ -37,3 +37,17 @@ export const SearchForm = (props: { handleSubmit: (arg0: string) => void }) => (
     )}
   </Formik>
 );
+const styles = StyleSheet.create({
+  form: {
+    marginVertical: 10,
+    flexDirection: "row",
+    alignSelf: "center",
+  },
+  input: {
+    flex: 1,
+    borderWidth: 3,
+    borderColor: "#BEDBDB",
+    borderRadius: 10,
+    paddingHorizontal: 10,
+  },
+});
