@@ -29,18 +29,49 @@ const Pictures = (props: { keyword: String }) => {
   }, [props.keyword]);
   if (pictures) {
     return (
-      <View>
+      <View style={styles.imageWrapper}>
         {pictures.map((picture) => (
-          <Image
-            key={uid()}
-            source={{
-              uri: picture.src.landscape,
-            }}
-            style={{ width: 400, height: 400 }}
-          />
+          <View key={uid()} style={styles.shadow}>
+            <Image
+              source={{
+                uri: picture.src.landscape,
+              }}
+              style={styles.image}
+            />
+          </View>
         ))}
       </View>
     );
   } else return <ActivityIndicator size="large" color="#BEDBDB" />;
 };
 export default Pictures;
+
+const styles = StyleSheet.create({
+  imageWrapper: {
+    paddingBottom: 60,
+    flex: 1,
+    flexDirection: "row",
+    alignSelf: "center",
+  },
+  shadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
+  },
+  image: {
+    resizeMode: "cover",
+    width: 150,
+    height: 150,
+    borderRadius: 20,
+    marginTop: 10,
+    marginHorizontal: 10,
+    borderColor: "#BEDBDB",
+    borderWidth: 5,
+  },
+});

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, StyleSheet } from "react-native";
 import { Audio } from "expo-av";
 import { Sound } from "expo-av/build/Audio";
+import { FlatButton } from "../../shared/FlatButton";
 
 const Listen = (props: { audio: string }) => {
   const [sound, setSound] = useState<Sound | undefined>();
@@ -26,6 +27,6 @@ const Listen = (props: { audio: string }) => {
       : undefined;
   }, [sound]);
 
-  return <Button title="Listen" color="black" onPress={playSound} />;
+  return <FlatButton text="Listen" onPress={playSound} />;
 };
 export default Listen;

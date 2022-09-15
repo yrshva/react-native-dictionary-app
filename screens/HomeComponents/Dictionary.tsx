@@ -3,7 +3,7 @@ import { ActivityIndicator, View, Text, StyleSheet } from "react-native";
 import axios from "axios";
 
 import Phonetics from "./Phonetics";
-import PartOfSpeach from "./PartOfSpeach";
+import PartOfSpeech from "./PartOfSpeech";
 import Pictures from "./Pictures";
 
 interface Word {
@@ -43,26 +43,29 @@ const Dictionary = (props: { keyword: String }) => {
           </View>
         )}
         {word.phonetics && <Phonetics data={word.phonetics} />}
-        {word.meanings && <PartOfSpeach meanings={word.meanings} />}
+        {word.meanings && <PartOfSpeech meanings={word.meanings} />}
         <Pictures keyword={props.keyword} />
       </View>
     );
   } else return <ActivityIndicator size="large" color="#BEDBDB" />;
 };
+
 export default Dictionary;
 
 const styles = StyleSheet.create({
   wordWrapper: {
     flexDirection: "row",
     alignItems: "center",
+    marginVertical: 5,
   },
   word: {
     fontWeight: "bold",
-    fontSize: 24,
+    fontSize: 18,
+    textTransform: "capitalize",
   },
   transcription: {
     fontStyle: "italic",
-    fontSize: 18,
+    fontSize: 16,
     marginHorizontal: 10,
   },
 });
