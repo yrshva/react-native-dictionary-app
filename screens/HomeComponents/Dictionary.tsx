@@ -35,7 +35,7 @@ const Dictionary = (props: { keyword: String }) => {
   }, [word]);
   if (!isLoading && word) {
     return (
-      <View>
+      <View style={styles.container}>
         {word.phonetic && (
           <View style={styles.wordWrapper}>
             <Text style={styles.word}>{word.word}</Text>
@@ -53,6 +53,9 @@ const Dictionary = (props: { keyword: String }) => {
 export default Dictionary;
 
 const styles = StyleSheet.create({
+  container: {
+    alignSelf: "center",
+  },
   wordWrapper: {
     flexDirection: "row",
     alignItems: "center",

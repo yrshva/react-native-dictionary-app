@@ -31,7 +31,7 @@ const Pictures = (props: { keyword: String }) => {
     return (
       <View style={styles.imageWrapper}>
         {pictures.map((picture) => (
-          <View key={uid()} style={styles.shadow}>
+          <View key={uid()}>
             <Image
               source={{
                 uri: picture.src.landscape,
@@ -52,17 +52,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignSelf: "center",
-  },
-  shadow: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-
-    elevation: 3,
   },
   image: {
     resizeMode: "cover",

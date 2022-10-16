@@ -22,7 +22,6 @@ export const FlatButton: React.FC<Props> = ({ text, onPress }) => (
 const styles = StyleSheet.create({
   button: {
     borderRadius: 10,
-    flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 8,
     backgroundColor: "#BEDBDB",
