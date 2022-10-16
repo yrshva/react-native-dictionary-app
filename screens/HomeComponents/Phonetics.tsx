@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1,
     alignSelf: "center",
-    marginTop: 5,
   },
   accent: {
     flexDirection: "row",

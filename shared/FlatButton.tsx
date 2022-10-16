@@ -14,7 +14,7 @@ interface Props {
 export const FlatButton: React.FC<Props> = ({ text, onPress }) => (
   <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
     <View style={styles.button}>
-      <Text style={styles.buttonText}>{text}</Text>
+      <Text>{text}</Text>
     </View>
   </TouchableOpacity>
 );
@@ -27,5 +27,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#BEDBDB",
     marginHorizontal: 10,
   },
-  buttonText: {},
 });
